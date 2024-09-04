@@ -1,0 +1,290 @@
+html, body {
+  width: 100%;
+  margin: 0;
+  font-family: "SUSE", sans-serif;
+}
+
+/* background */
+.bg-img {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  background: url('http://unsplash.it/1200x800') center center no-repeat;
+  background-size: cover;
+}
+.bg-img::before {
+    content: '';
+	position: fixed;
+  z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+	opacity: .6; 
+  }
+
+/* input */
+.myform{
+  margin: 5% auto;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.form__group {
+  justify-content: center;
+  position: relative;
+  padding: 20px 10px 10px;
+  z-index: 10;
+  margin: auto;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 250px;
+  border: none;
+  border-bottom: 3px solid #9b9b9bca;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  z-index: 10;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #674188, #C8A1E0);
+  border-image-slice: 1;
+  margin-bottom: 0px;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #674188;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* btn */
+.Btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border-radius: calc(45px/2);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background: linear-gradient(144deg,#698393,#B08986 50%,#D08B80);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  font-size: 2.2em;
+  color: white;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 500;
+  transition-duration: .3s;
+  top: 30%;
+  left: 50px;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 150px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 10px;
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 50%;
+  transition-duration: .3s;
+  padding-right: 15px;
+  display: inline-block;
+
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+
+/* results */
+.result{
+  height: 150px;
+  width: 50%;
+  margin: 1% auto 2%;
+  z-index: 20;
+  justify-content: center;
+}
+
+ul{
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  list-style-type: none;
+  padding: 0;
+}
+
+#todo-list li {
+  padding: 20px 10px 10px;
+  width: 99%;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;           
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  height: 70px;
+  margin-left: 0;
+  justify-content: space-between;
+  padding-left: 3%;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: #698393;
+  word-break: break-all;
+}
+
+/* Style for the delete button */
+#todo-list li button {
+  background-color: #ff4d4d; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#todo-list li button:hover {
+  background-color: #ff3333;
+}
+
+#todo-list li button i{
+  font-size: 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: gray;
+}
+
+.message {
+  color: white;
+  font-size: 22px;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+  font-weight: bold;
+}
+
+.message.show {
+  display: block;
+}
+
+@media(max-width:1024px){
+  .myform{
+    width: 50%;
+  }
+  ul{
+    width: 100%;
+  }
+}
+
+@media(max-width: 769px){
+  .myform{
+    width: 60%;
+  }
+  .result{
+    width: 60%;
+  }
+}
+
+@media(max-width: 426px){
+  .myform{
+    width: 70%;
+  }
+  .Btn{
+    margin-top: 5%;
+  }
+  .result{
+    width: 80%;
+  }
+}
+
+@media(max-width: 321px){
+  .myform{
+    width: 80%;
+    padding-left: 8%;
+  }
+  .result{
+    width: 90%;
+  }
+}

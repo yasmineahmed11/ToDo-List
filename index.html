@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- bg -->
+  <div class="bg-img"></div>
+
+  <!-- input -->
+  <div class="myform">
+    <div class="form__group field">
+      <input type="input" class="form__field" placeholder="Name" required="" id="input">
+      <label for="input" class="form__label">Enter Your Task</label>
+      <button id="add" class="Btn">
+        <div class="sign">+</div>
+  
+        <div class="text">Create</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- result card -->
+   <div class="result">
+    <ul id="todo-list"></ul>
+    <div id="message" class="message"></div>
+   </div>
+
+   <script src="https://kit.fontawesome.com/fed0a73643.js" crossorigin="anonymous"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
